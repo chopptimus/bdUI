@@ -149,7 +149,8 @@ mod.create_resources = function(self, unit)
 		-- Rune Indicator
 		self.Resources.primary:Show()
 		self.Runes = {}
-		self.Runes.colorSpec = true
+		self.Runes.colorSpec = false
+        self.Runes.sortOrder = "asc"
 		for index = 1, 6 do
 			local rune = CreateFrame('StatusBar', nil, self.Resources.primary)
 			local width = (self.Resources.primary:GetWidth() - (bdUI.border * (5))) / 6

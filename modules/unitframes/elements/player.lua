@@ -20,7 +20,7 @@ mod.custom_layout["player"] = function(self, unit)
 	mod.additional_elements.combat(self, unit)
 	mod.additional_elements.buffs(self, unit)
 
-	self.Buffs.size = 22
+	self.Buffs.size = 32
 
 	self.Power:SetHeight(config.playertargetpowerheight)
 	self.Power:Show()

@@ -57,7 +57,7 @@ bdParent:SetPoint("BOTTOMRIGHT", UIParent)
 function bdUI:calculate_scale()
 	bdUI.screenheight = select(2, GetPhysicalScreenSize())
 	bdUI.scale = 768 / bdUI.screenheight
-	bdUI.ui_scale = GetCVar("uiScale") or 1
+	bdUI.ui_scale = bdParent:GetEffectiveScale() or 1
 	bdUI.pixel = bdUI.scale / bdUI.ui_scale
 	bdUI.border = bdUI.pixel * 2
 	bdParent:SetScale(bdUI.scale)

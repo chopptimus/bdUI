@@ -225,13 +225,14 @@ mod.additional_elements = {
 		self.Buffs:SetPoint("BOTTOMRIGHT", self.Health, "TOPRIGHT", 0, 4)
 		self.Buffs:SetSize(config.playertargetwidth, 60)
 		self.Buffs.size = 18
-		self.Buffs.initialAnchor  = "BOTTOMLEFT"
+		self.Buffs.initialAnchor  = "BOTTOMRIGHT"
 		self.Buffs.spacing = bdUI.border
 		self.Buffs.num = 20
 		self.Buffs['growth-y'] = "UP"
-		self.Buffs['growth-x'] = "RIGHT"
+		self.Buffs['growth-x'] = "LEFT"
 		self.Buffs.PostUpdateIcon = function(self, unit, button, index, position, duration, expiration, debuffType, isStealable)
 			local name, _, _, debuffType, duration, expiration, caster, IsStealable, _, spellID = UnitAura(unit, index, button.filter)
+            button.cd:SetReverse(true)
 			duration, expiration = bdUI:update_duration(button.cd, unit, spellID, caster, name, duration, expiration)
 		end
 		self.Buffs.PostCreateIcon = function(buffs, button)
